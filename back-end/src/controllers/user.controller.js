@@ -4,11 +4,11 @@ import userService from '../services/user.service.js';
 class UserController {
   /**
    * @openapi
-   * /api/users/create:
+   * /api/users:
    *   post:
    *     summary: Create a new user
    *     tags:
-   *       - Authentication
+   *       - Users
    *     requestBody:
    *       required: true
    *       content:
