@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "concurrently \"npm run server\" \"npm run client\"",
-		"server": "cd back-end && nodemon server.js",
+		"server": "cd back-end && node index.js",
 		"client": "cd front-end && ng serve"
 	},
 	"keywords": [],

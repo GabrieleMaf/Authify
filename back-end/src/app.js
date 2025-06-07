@@ -16,7 +16,7 @@ const options = {
       version: '1.0.0',
     },
   },
-  apis: ['./src/routes/*.js', './src/controllers/*.js'], 
+  apis: ['./src/routes/*.js', './src/controllers/*.js'],
 };
 
 const specs = swaggerJsdoc(options);
@@ -24,7 +24,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use('/api/users', userRoutes);
 
-app.use((err, req, res, next) => {
+app.use((err, _req, res, _next) => {
   console.error(err);
   res.status(500).json({ message: 'Internal Server Error' });
 });
