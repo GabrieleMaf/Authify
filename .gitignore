@@ -1,0 +1,28 @@
+# Node modules (backend e frontend)
+**/node_modules/
+
+# Environment variables
+**/.env
+
+# Build output
+**/dist/
+**/build/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# PIDs
+*.pid
+*.pid.lock
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE/config
+.vscode/
+*.swp
