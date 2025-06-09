@@ -1,0 +1,29 @@
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: my_mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: .
+    container_name: my_backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URI: mongodb://root:example@mongo:27017/mydatabase?authSource=admin
+    depends_on:
+      - mongo
+    volumes:
+      - ./:/app
+    command: ["node", "src/server.js"]
+
+volumes:
+  mongo_data:
